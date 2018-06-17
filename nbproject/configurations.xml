@@ -35,6 +35,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>.gitignore</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -46,6 +47,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="CML.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CML.h" ex="false" tool="3" flavor2="0">
@@ -89,6 +92,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path=".gitignore" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="CML.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CML.h" ex="false" tool="3" flavor2="0">
