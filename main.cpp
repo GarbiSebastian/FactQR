@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
+#include <cassert>
 
 #include "typedefs.h"
 #include "Givens.h"
@@ -156,20 +157,107 @@ void prueba5(){
         val= round(rand() % 10000) / 10000;
         b[i]=val;
     }
-    cout << "A = ";
-    imprimirOctave(A);
-    cout << "b = ";
-    imprimirOctave(b);
+    cout << "A = ";imprimirOctave(A);
+    cout << "b = ";imprimirOctave(b);
     CML cml(A);
+    cout << "R= ";imprimirOctave(A);
     cml.resolver(b,res);
-    cout << "x = ";
-    imprimirOctave(res);
+    cout << "Qtb = ";imprimirOctave(b);
+    cout << "x = ";imprimirOctave(res);
+}
+
+void prueba7(){
+    unsigned int m = 15, n = 7;
+    matrizDouble A(m, vectorDouble(n, 0));
+    vectorDouble b(m,0);
+    vectorDouble res(n,0);
+    srand(0);
+    double val;
+    for (unsigned int i = 0; i < m; i++) {
+        for (unsigned int j = i; j < n; j++) {
+            val= round(rand() % 10000) / 10000;
+            A[i][j] = val;
+            
+        }
+        val= round(rand() % 10000) / 10000;
+        b[i]=val;
+    }
+    cout << "A=";imprimirOctave(A);
+    //FactorizadorQR q(A);
+    //cout << "R=";imprimirOctave(A);
+    cout << "b=";imprimirOctave(b);
+    //q.aplicarV(b);
+    //cout << "Qtb=";imprimirOctave(b);
+    unsigned int i;
+    double acum, a_ii, a_ij;
+    assert(n==res.size());
+    for (unsigned int _i = 0; _i < n; _i++) {
+        i = (n - 1) - _i;
+        a_ii = A[i][i];
+        acum = 0;
+        for (unsigned int j = i + 1; j < n; j++) {
+            a_ij =  A[i][j];
+            acum += res[j] * a_ij/a_ii;
+        }
+        res[i] = b[i]/a_ii - acum;
+    }
+    cout << "x=";imprimirOctave(res);
+}
+
+void prueba8(){
+    unsigned int m = 15, n = 7;
+    matrizDouble A(m, vectorDouble(n, 0));
+    vectorDouble b(m,0);
+    vectorDouble res(n,0);
+    unsigned int i;
+    double acum, a_ii, a_ij;
+    srand(0);
+    double val;
+    for (unsigned int i = 0; i < m; i++) {
+        for (unsigned int j = 0; j < n; j++) {
+            val= round(rand() % 10000) / 10000;
+            A[i][j] = val;
+            
+        }
+        val= round(rand() % 10000) / 10000;
+        b[i]=val;
+    }
+    cout << "A=";imprimirOctave(A);
+    FactorizadorQR q(A);
+    cout << "R=";imprimirOctave(A);
+    cout << "b1=";imprimirOctave(b);
+    for (unsigned int _i = 0; _i < n; _i++) {
+        i = (n - 1) - _i;
+        a_ii = A[i][i];
+        acum = 0;
+        for (unsigned int j = i + 1; j < n; j++) {
+            a_ij =  A[i][j];
+            acum += res[j] * a_ij/a_ii;
+        }
+        res[i] = b[i]/a_ii - acum;
+    }
+    cout << "x1=";imprimirOctave(res);
+    q.aplicarV(b);
+    cout << "b2=";imprimirOctave(b);
+    for (unsigned int _i = 0; _i < n; _i++) {
+        i = (n - 1) - _i;
+        a_ii = A[i][i];
+        acum = 0;
+        for (unsigned int j = i + 1; j < n; j++) {
+            a_ij =  A[i][j];
+            acum += res[j] * a_ij/a_ii;
+        }
+        res[i] = b[i]/a_ii - acum;
+    }
+    cout << "x2=";imprimirOctave(res);
 }
 
 
-
 int main(int argc, char** argv) {
-    prueba5();
+    //prueba5();
+    
+    //prueba7();
+    prueba8();
     return 0;
 }
 

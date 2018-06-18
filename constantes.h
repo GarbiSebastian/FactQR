@@ -4,7 +4,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-    const double epsilon = 1e-5;
+    const double epsilon = 1e-10;
 
 
 

@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=factorizaci_nqr
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/factorizaci_nqr
+CND_ARTIFACT_NAME_Debug=factqr
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/factqr
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=factorizaciónqr.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/factorizaciónqr.tar
+CND_PACKAGE_NAME_Debug=factqr.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/factqr.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=factorizaci_nqr
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/factorizaci_nqr
+CND_ARTIFACT_NAME_Release=factqr
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/factqr
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=factorizaciónqr.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/factorizaciónqr.tar
+CND_PACKAGE_NAME_Release=factqr.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/factqr.tar
 #
 # include compiler specific variables
 #

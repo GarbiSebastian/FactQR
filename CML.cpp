@@ -15,12 +15,12 @@ void CML::resolver(vectorDouble& b, vectorDouble & respuesta) {
     assert(n==respuesta.size());
     this->q.aplicarV(b);
     for (unsigned int _i = 0; _i < n; _i++) {
-        i = n - 1 - _i;
+        i = (n - 1) - _i;
         a_ii = (*(this->A))[i][i];
         acum = 0;
         for (unsigned int j = i + 1; j < n; j++) {
             a_ij =  (*(this->A))[i][j];
-            acum += b[j] * a_ij/a_ii;
+            acum += respuesta[j] * a_ij/a_ii;
         }
         respuesta[i] = b[i]/a_ii - acum;
     }
